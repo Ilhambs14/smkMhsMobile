@@ -1,35 +1,21 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
+import {View, Text, Image} from 'react-native';
+import React from 'react';
+import Home from './src/pages/Home';
+import Detail from './src/pages/Detail';
+import {NavigationContainer} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const App = () => {
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View>
-      <View style={{height:52,
-       backgroundColor:'red',
-       marginHorizontal:1,
-       borderRadius:99,
-       marginTop:16,
-       flexDirection: 'row',
-       justifyContent:'space-between',
-       alignItems:'center',
-       paddingHorizontal:10,
-       paddingVertical:16,}}>
-      
-      
-      <Image 
-      style={{width:100,height:100}} 
-      Source={require('../AwesomeProject/src/assets/images2.png')}/>
-    
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Detail" component={Detail} />
 
-      </View> 
-      <View style={{width:20,
-          height:20,
-          backgroundColor: 'yellow',
-          }}>
-        </View>
-    </View>
-
-  )
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
-
-export default App
+export default App;
