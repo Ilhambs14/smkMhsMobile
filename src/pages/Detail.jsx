@@ -130,7 +130,7 @@ const Detail = ({navigation}) => {
               }} />
 
              </View>
-             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+             <TouchableOpacity onPress={() => navigation.navigate('Succes')}>
 
              <View style={{
               width: 350,
